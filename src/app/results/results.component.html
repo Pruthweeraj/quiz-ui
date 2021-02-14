@@ -1,0 +1,20 @@
+<H1>Result Summary</H1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.id }}</td>
+        <td>{{ result.user.name | uppercase }}</td>
+        <td>{{ result.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
