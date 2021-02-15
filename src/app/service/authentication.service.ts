@@ -6,7 +6,7 @@ import { UserDataService } from './data/user/user-data.service';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private userDataService: UserDataService) {}
+  constructor(private userDataService: UserDataService) { }
 
   validateUser(requestUser: User) {
     return this.userDataService.validateAndGetUser(requestUser);
@@ -31,5 +31,19 @@ export class AuthenticationService {
 
   logout() {
     sessionStorage.clear();
+  }
+
+  getUsernameFromSection() {
+    if (null !== sessionStorage.getItem('username')) {
+      return sessionStorage.getItem('username');
+    }
+    return '';
+  }
+
+  getUserIdFromSection() {
+    if (null !== sessionStorage.getItem('userId')) {
+      return sessionStorage.getItem('userId');
+    }
+    return '';
   }
 }

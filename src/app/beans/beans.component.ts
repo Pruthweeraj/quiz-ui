@@ -53,13 +53,19 @@ export class Option {
   }
 }
 
+export class Answer {
+  public constructor(public map: any) {
+    this.map = map;
+  }
+}
+
 @Component({
   selector: 'app-beans',
   templateUrl: './beans.component.html',
   styleUrls: ['./beans.component.css'],
 })
 export class BeansComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

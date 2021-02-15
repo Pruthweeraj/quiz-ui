@@ -1,1 +1,22 @@
-<p>quiz works!</p>
+<h1>Practice Makes Perfect...</h1>
+<form class="container" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+
+  <div *ngFor="let question of questions; let i = index;">
+    <h2>Q{{i+1}}. {{question.name}}</h2>
+
+    <p *ngFor="let option of question.options">
+
+      <label>
+        <input type="radio" [(ngModel)]="option.id" value="{{option.id}}" name="{{question.id}}">
+        {{option.name}}
+      </label>
+    </p>
+
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+<!-- id="radio_id_{{ counter + }}"
+for="radio_id_{{ counter }} -->
